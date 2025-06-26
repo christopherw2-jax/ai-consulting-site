@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 export default function HomePage() {
-  const bgRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
