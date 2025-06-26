@@ -1,143 +1,66 @@
-import getConfig from 'next/config';
-
-import Layout from '@/components/Layout';
-
-const { publicRuntimeConfig } = getConfig();
-const { name } = publicRuntimeConfig.site;
-
-const Home = () => {
+export default function HomePage() {
   return (
-    <Layout>
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="prose prose-blue mx-auto">
-            <h1>{name}</h1>
-            <p>Welcome to my Next.js + Tailwind CSS starter template.</p>
+    <main className="min-h-screen bg-gray-100 text-gray-800 p-6 font-sans">
+      <section className="max-w-3xl mx-auto text-center py-16">
+        <h1 className="text-4xl font-bold mb-4">AI Consulting for Small Businesses</h1>
+        <p className="text-lg mb-6">
+          Helping Jacksonville business owners save time, reduce costs, and automate repetitive tasks with AI. No tech skills needed.
+        </p>
+        <a href="#contact" className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">
+          Book a Free Consultation
+        </a>
+      </section>
 
-            <h2>Features:</h2>
-            <ul>
-              <li>
-                Pre-configured <code>postcss.config.js</code> and{' '}
-                <code>tailwind.config.js</code>.
-              </li>
-              <li>
-                Markdown and CMS Content friendly with{' '}
-                <code>@tailwindcss/typography</code>.
-              </li>
-              <li>
-                Form styles with <code>@tailwindcss/forms</code>.
-              </li>
-              <li>
-                <code>global.css</code> that contains Tailwind CSS directives.
-              </li>
-              <li>
-                <code>{'<Layout />'}</code> component.
-              </li>
-            </ul>
-
-            <h2>Guides</h2>
-            <ul>
-              <li>
-                <a
-                  href="https://nextjs.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Next.js
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://tailwindcss.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Tailwind CSS
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/tailwindlabs/tailwindcss-typography"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  @tailwindcss/typography
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/tailwindlabs/tailwindcss-forms"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  @tailwindcss/forms
-                </a>
-              </li>
-            </ul>
-
-            <h2>Form control examples</h2>
-            <form action="" className="mb-0 space-y-6">
-              <div>
-                <label
-                  htmlFor="sample-email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Sample email input
-                </label>
-                <input
-                  type="email"
-                  name="sample-email"
-                  id="sample-email"
-                  placeholder="Enter your email address"
-                />
-              </div>
-              <div className="flex items-center">
-                <label htmlFor="sample-checkbox">
-                  <input
-                    type="checkbox"
-                    name="sample-checkbox"
-                    id="sample-checkbox"
-                  />
-                  <span className="ml-2">A sample checkbox</span>
-                </label>
-              </div>
-              <div className="flex items-center space-x-4">
-                <label htmlFor="sample-radio-1">
-                  <input type="radio" name="sample-radio" id="sample-radio-1" />
-                  <span className="ml-2">A sample radio number one</span>
-                </label>
-                <label htmlFor="sample-radio-2">
-                  <input type="radio" name="sample-radio" id="sample-radio-2" />
-                  <span className="ml-2">A sample radio number two</span>
-                </label>
-              </div>
-            </form>
-
-            <h2>Maintainer</h2>
-            <p>
-              This project template is maintained by{' '}
-              <a
-                href="https://earvinpiamonte.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @earvinpiamonte
-              </a>{' '}
-              and publicly available on{' '}
-              <a
-                href="https://github.com/earvinpiamonte/nextjs-tailwindcss-template"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              .
-            </p>
-          </div>
+      <section className="max-w-4xl mx-auto py-12 grid gap-6 md:grid-cols-3">
+        <div className="bg-white p-6 rounded-2xl shadow">
+          <h3 className="font-semibold text-xl mb-2">AI Strategy Audit</h3>
+          <p>Get a personalized roadmap for automating your business operations using the right tools.</p>
+        </div>
+        <div className="bg-white p-6 rounded-2xl shadow">
+          <h3 className="font-semibold text-xl mb-2">Workflow Automation</h3>
+          <p>We’ll set up AI assistants, autoresponders, or lead gen workflows tailored to your goals.</p>
+        </div>
+        <div className="bg-white p-6 rounded-2xl shadow">
+          <h3 className="font-semibold text-xl mb-2">1-on-1 Training</h3>
+          <p>Learn how to use ChatGPT, prompt engineering, and other AI tools directly for your business.</p>
         </div>
       </section>
-    </Layout>
-  );
-};
 
-export default Home;
+      <section id="contact" className="max-w-xl mx-auto py-12">
+        <h2 className="text-2xl font-bold mb-4 text-center">Let’s Talk</h2>
+        <form
+          action="https://formspree.io/f/xkgbpkqa"
+          method="POST"
+          className="space-y-4"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+            className="w-full px-4 py-2 rounded-xl border"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+            className="w-full px-4 py-2 rounded-xl border"
+          />
+          <textarea
+            name="message"
+            placeholder="How can I help you?"
+            required
+            className="w-full px-4 py-2 rounded-xl border"
+          />
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
+    </main>
+  );
+}
